@@ -7,6 +7,28 @@
 
 
 // YOUR CODE HERE
+function Device(brand){
+    this._brand = brand
+}
+
+Device.prototype.powerOn = function(){
+    console.log(`${this._brand} device is now powered on`)
+}
+
+function Smartphone(brand,model){
+    // device inheritance
+    Device.call(this,brand)
+    this._model = model
+}
+
+// inheritance
+Smartphone.prototype = Object.create(Device.prototype)
+Smartphone.prototype.constructor = Smartphone
+
+Smartphone.prototype.call = function(){
+    console.log(`Calling from ${this._brand} ${this._model}`)
+}
+
 
 
 

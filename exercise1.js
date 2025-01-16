@@ -6,7 +6,14 @@
 
 
 // YOUR CODE HERE
+function Vehicle(make,model){
+    this._make = make
+    this._model = model
+}
 
+Vehicle.prototype.startEngine = function(){
+    console.log(`The ${this._make} ${this._model} engine is starting`)
+}
 
 
 
